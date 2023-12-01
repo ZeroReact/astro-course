@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Contacto">
+    <main>
+        <h1>Contacto</h1>
+        <section>
+            <form method="POST">
+                <input type="text" placeholder="Escribe tu nombre" name="nombre" required/>
+                <input type="email" placeholder="Escribe tu correo" name="correo" required/>
+                <input type="text" placeholder="Tu mensaje..." name="texto" required/>
+                <button type="submit" name="enviar">Enviar fromulario</button>
+            </form>
+        </section>
+    </main>
+</Layout>
+
+<script>
+const form = document.querySelector("form")
+
+form.addEventListener("submit", () => {
+    const enviarFormulario = (event) => {
+        event.preventDefault()
+
+        const Nombre = form.nombre.value
+        const Correo = form.correo.value
+        const Todo = form.texto.value
+    }
+
+    enviarFormulario()
+})
+</script>
+
+<style>
+    section {
+        color: #121212;
+        background: #ccc;
+        width: 300px;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 15px;
+    }
+    section > form {
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+        gap: 10px;
+    }
+
+    form > input {
+        height: 50px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+</style>
